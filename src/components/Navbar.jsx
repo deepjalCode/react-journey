@@ -1,17 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div className='w-full bg-gray-200 px-7 py-4 flex items-center justify-between '>
-        <h2 className='text-3xl font-bold '>DepxCode</h2>
-        <div className='flex items-center gap-22 text-gray-950 text-xl bg-gray-400 font-medium px-7 py-4 rounded-4xl shadow-black '>
-          <Link to='/'>Home</Link>
-          <Link to='/product'>Product</Link>
-          <Link to='/services'>Services</Link>
-          <Link to='/about'>About</Link>
-        </div>
+    <div className='flex justify-between px-8 py-3 bg-gray-200 items-center'>
+      <h2 className='text-xl font-bold'>D Code</h2>
+      <div className='flex gap-9 '>
+        <a className='text-lg font-bold' href="/">Home</a>
+        <a className='text-lg font-bold' href="/contact">Contact</a>
+        <a className='text-lg font-bold' href="/about">About</a>
+        <a className='text-lg font-bold' href="/services">Services</a>
+
       </div>
+    </div>
   )
 }
 

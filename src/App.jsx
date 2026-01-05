@@ -1,23 +1,25 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Product from './pages/Product'
-import Services from './pages/Services'
-import About from './pages/About'
 import Navbar from './components/Navbar'
-
+import Fotter from './components/Fotter'
+import Home from './pages/Home'
+import Services from './pages/Services'
+import { Route,Routes } from 'react-router-dom'
+import Contact from './pages/Contact'
+import About from './pages/About'
+import UnexpectedPage from './pages/UnexpectedPage'
 
 const App = () => {
   return (
-    <div className='h-screen w-full bg-gray-400 '>
+    <div className='bg-gray-950  h-screen w-full'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/product' element={<Product />} />
-        <Route path='/services' element={<Services />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<About />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='*' element={<UnexpectedPage />} />
       </Routes>
-
+      <Fotter />
     </div>
   )
 }

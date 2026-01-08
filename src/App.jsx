@@ -1,41 +1,39 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Fotter from './components/Fotter'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
+import Footer from './components/Footer'
 import Services from './pages/Services'
-import { Route,Routes } from 'react-router-dom'
+import Product from './pages/Product'
 import Contact from './pages/Contact'
-import About from './pages/About'
-import UnexpectedPage from './pages/UnexpectedPage'
-import Men from './pages/Men'
-import Women from './pages/Women'
-import Kid from './pages/Kid'
-import Courses from './pages/Courses'
-import CourseDetails from './pages/CourseDetails'
-import Navbar2 from './pages/Navbar2'
-
+import NotFound from './pages/NotFound'
+import New from './pages/New'
+import Oldest from './pages/Oldest'
+import Trend from './pages/Trend'
+import Details from './pages/Details'
 
 const App = () => {
+
   return (
-    <div className='bg-gray-950  h-screen w-full'>
+    <div className='h-screen w-full bg-emerald-700'>
       <Navbar />
-      <Navbar2 />
+      <Footer />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/courses/:dtId' element={<CourseDetails />} />
-        <Route path='/courses' element={<Courses />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/services' element={<Services />} >
-          <Route path='men' element={<Men />} />
-          <Route path='women' element={<Women />} />
-          <Route path='Kid' element={<Kid />} />
+        <Route path='/' element={<Home />}/>
+        <Route path='/product' element={<Product />}>
+          <Route path='/product/new' element={<New />} />
+          <Route path='/product/old' element={<Oldest />} />
+          <Route path='/product/trend' element={<Trend />} />
         </Route>
-        <Route path='*' element={<UnexpectedPage />} />
-        
+        <Route path='/product/:id' element={<Details />} />
+        <Route path='/services' element={<Services />}/>
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
-      <Fotter />
+    
+      
     </div>
+    
   )
 }
 

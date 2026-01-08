@@ -1,16 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const CourseDetails = () => {
+const Details = () => {
 
   const parms = useParams()
-  console.log(parms)
+  
 
   return (
     <div>
-      <h1>{parms.dtId}    Course Details </h1>
+      <h1 className='capitalize'>{parms.id} Product Details</h1>
     </div>
   )
 }
 
-export default CourseDetails
+export default Details

@@ -1,18 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Nav2 from './Nav2'
+
 
 const Navbar = (props) => {
- 
-  
-  const changeTheme = ()=>{
-    props.setTheme(props.theme=='light'?'dark':'light')
-  }
+
+
 
   return (
-    <div>
-      <p>{props.theme}</p>
-      <button 
-        onClick={changeTheme}
-        className='bg-emerald-500 rounded px-5 py-2'>Change Theme</button>
+    <div className='flex items-center justify-between px-8 py-4 bg-emerald-400'>
+      <h2 className=' text-xl font-bold capitalize'>DeepxCode </h2>
+      <Nav2 theme={props.theme} />
     </div>
   )
 }

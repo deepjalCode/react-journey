@@ -3,11 +3,11 @@ import Navbar from './components/Navbar'
 
 const App = () => {
 
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme]=useState('light')
+
   return (
-    <div>
-      <Navbar theme={theme} setTheme={setTheme} />
-      <h1>Theme is {theme}</h1>
+    <div className='h-screen w-full bg-emerald-950'>
+      <Navbar theme={theme}/>
     </div>
   )
 }
